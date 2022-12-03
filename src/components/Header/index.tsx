@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import MainMenu from './MainMenu';
 import SubMenu from './SubMenu';
 
 export default function Header() {
@@ -13,6 +14,7 @@ export default function Header() {
           />
         </Link>
         <SubMenu />
+        <MainMenu />
       </div>
     </header>
   );
