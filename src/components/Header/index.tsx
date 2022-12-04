@@ -1,10 +1,11 @@
 import { Link } from 'react-router-dom';
+import Badges from './Badges';
 import MainMenu from './MainMenu';
 import SubMenu from './SubMenu';
 
 export default function Header() {
   return (
-    <header className="bg-[#f6f5f0] border-b-[1px] border-[#c8c8c8]">
+    <header className="fixed w-full bg-[#f6f5f0] border-b-[1px] border-[#c8c8c8]">
       <div className="relative w-[1100px] h-[120px] m-auto">
         <Link to="/">
           <img
@@ -16,6 +17,7 @@ export default function Header() {
         <SubMenu />
         <MainMenu />
       </div>
+      <Badges />
     </header>
   );
 }
