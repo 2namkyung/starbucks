@@ -31,7 +31,7 @@ export default function Badges() {
 
   return (
     <div
-      className={`transition-opacity duration-700 ${isBadgeAnimation} absolute top-[132px] right-[12px]`}
+      className={`${isBadgeAnimation} duration-700 absolute top-[132px] right-[12px]`}
     >
       <div className="rounded-lg overflow-hidden cursor-pointer mb-2">
         <img src="/img/badge1.jpg" alt="Badge1" />
