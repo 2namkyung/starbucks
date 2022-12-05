@@ -5,7 +5,7 @@ import SubMenu from './SubMenu';
 
 export default function Header() {
   return (
-    <header className="fixed w-full bg-[#f6f5f0] border-b-[1px] border-[#c8c8c8]">
+    <header className="fixed w-full bg-[#f6f5f0] border-b-[1px] border-[#c8c8c8] top-0">
       <div className="relative w-[1100px] h-[120px] m-auto">
         <Link to="/">
           <img
