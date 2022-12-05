@@ -8,10 +8,11 @@ export default function Visual() {
   const [animationFour, setAnimationFour] = useState('opacity-0');
 
   useEffect(() => {
-    setAnimationOne('ease-out opacity-100 duration-1000 delay-700');
-    setAnimationTwo('ease-out opacity-100 duration-1000 delay-[1400ms]');
-    setAnimationThree('ease-out opacity-100 duration-1000 delay-[2100ms]');
-    setAnimationFour('ease-out opacity-100 duration-1000 delay-[2800ms]');
+    const commonAnimation = 'ease-out opacity-100 duration-1000';
+    setAnimationOne(`${commonAnimation} delay-700`);
+    setAnimationTwo(`${commonAnimation} delay-[1400ms]`);
+    setAnimationThree(`${commonAnimation} delay-[2100ms]`);
+    setAnimationFour(`${commonAnimation} delay-[2800ms]`);
   }, []);
 
   return (
