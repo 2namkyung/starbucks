@@ -1,12 +1,22 @@
+import { useCallback, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay } from 'swiper';
+import { Autoplay, Pagination } from 'swiper';
+
+import Button from './Button';
 
 import 'swiper/css';
 import 'swiper/css/autoplay';
+import 'swiper/css/pagination';
 
 export default function Notice() {
+  const [togglePromotion, setTogglePromotion] = useState(false);
+
+  const onToggle = useCallback(() => {
+    setTogglePromotion((prev) => !prev);
+  }, []);
+
   return (
-    <div className="">
+    <div>
       <div className="relative">
         <div className="absolute top-0 left-0 w-1/2 h-full bg-[#333]" />
         <div className="absolute top-0 right-0 w-1/2 h-full bg-[#f6f5ef]" />
@@ -52,11 +62,60 @@ export default function Notice() {
             <button
               type="button"
               className="w-[62px] h-[62px] flex justify-center items-center"
+              onClick={onToggle}
             >
               <div className="material-icons text-[30px]">upload</div>
             </button>
           </div>
         </div>
+      </div>
+
+      <div
+        className={`relative h-[593px] bg-[#f6f5ef] overflow-hidden transition-[height] duration-700 ease-in-out ${
+          !togglePromotion && 'h-0'
+        }`}
+      >
+        <Swiper
+          className="promotion h-[593px] top-[40px]"
+          modules={[Autoplay, Pagination]}
+          slidesPerView={3}
+          spaceBetween={15}
+          centeredSlides
+          autoplay={{ delay: 3000 }}
+          pagination={{ clickable: true }}
+          loop
+        >
+          <SwiperSlide>
+            <img src="/img/promotion_slide1.jpg" alt="" />
+            <div className="flex justify-center">
+              <Button type="primary" title="자세히 보기" />
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src="/img/promotion_slide2.jpg" alt="" />
+            <div className="flex justify-center">
+              <Button type="primary" title="자세히 보기" />
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src="/img/promotion_slide3.jpg" alt="" />
+            <div className="flex justify-center">
+              <Button type="primary" title="자세히 보기" />
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src="/img/promotion_slide4.jpg" alt="" />
+            <div className="flex justify-center">
+              <Button type="primary" title="자세히 보기" />
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src="/img/promotion_slide5.jpg" alt="" />
+            <div className="flex justify-center">
+              <Button type="primary" title="자세히 보기" />
+            </div>
+          </SwiperSlide>
+        </Swiper>
       </div>
     </div>
   );
