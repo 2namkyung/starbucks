@@ -3,6 +3,8 @@ type ButtonType = 'primary' | 'reverse' | 'brown' | 'gold' | 'white';
 type ButtonProps = {
   type: ButtonType;
   title: string;
+  width?: string;
+  styles?: string;
 };
 
 function hoverStyleOnButtonType(type: string) {
@@ -22,15 +24,20 @@ function hoverStyleOnButtonType(type: string) {
   }
 }
 
-export default function Button({ type, title }: ButtonProps) {
+export default function Button({ type, title, width, styles }: ButtonProps) {
   return (
     <button
       type="button"
-      className={`block w-[130px] p-[10px] border-2 border-[#333] rounded-[4px] 
+      className={`block w-[${width}] p-[10px] border-2 border-[#333] rounded-[4px] 
         text-[16px] font-bold text-center 
-        cursor-pointer box-border ${hoverStyleOnButtonType(type)}`}
+        cursor-pointer box-border ${hoverStyleOnButtonType(type)} ${styles}`}
     >
       {title}
     </button>
   );
 }
+
+Button.defaultProps = {
+  width: '130px',
+  styles: '',
+};
