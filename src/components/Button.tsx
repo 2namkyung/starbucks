@@ -10,7 +10,7 @@ type ButtonProps = {
 function hoverStyleOnButtonType(type: string) {
   switch (type) {
     case 'primary':
-      return 'hover:bg-[#333] hover:text-white';
+      return 'border-[#333] hover:bg-[#333] hover:text-white';
     case 'reverse':
       return 'bg-[#333] text-white hover:transparent hover:text-[#333]';
     case 'brown':
@@ -28,7 +28,7 @@ export default function Button({ type, title, width, styles }: ButtonProps) {
   return (
     <button
       type="button"
-      className={`block w-[${width}] p-[10px] border-2 border-[#333] rounded-[4px] 
+      className={`block w-[${width}] p-[10px] border-2 rounded-[4px] 
         text-[16px] font-bold text-center 
         cursor-pointer box-border ${hoverStyleOnButtonType(type)} ${styles}`}
     >
