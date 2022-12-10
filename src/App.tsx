@@ -3,6 +3,7 @@ import Header from './components/Header';
 import Notice from './components/Notice';
 import Reward from './components/Reward';
 import Visual from './components/Visual';
+import Youtube from './components/Youtube';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Visual />
       <Notice />
       <Reward />
+      <Youtube />
     </BrowserRouter>
   );
 }
